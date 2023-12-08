@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="postgres@ep-small-meadow-18713611-pooler.us-east-1.postgres.vercel-storage.com" uuid="1bcbb2a0-b0db-417a-907e-e6a7054ffffe">
+    <data-source source="LOCAL" name="verceldb@ep-small-meadow-18713611-pooler.us-east-1.postgres.vercel-storage.com" uuid="9d0284be-1038-47db-8649-3421a19d8fe5">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://ep-small-meadow-18713611-pooler.us-east-1.postgres.vercel-storage.com:5432/postgres</jdbc-url>
+      <jdbc-url>jdbc:postgresql://ep-small-meadow-18713611-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

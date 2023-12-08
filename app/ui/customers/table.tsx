@@ -83,10 +83,10 @@ export default async function CustomersTable({
                   </tr>
                 </thead>
 
-                <tbody className="divide-y divide-gray-200 text-gray-900">
+                <tbody className="text-gray-900 divide-y divide-gray-200">
                   {customers.map((customer) => (
                     <tr key={customer.id} className="group">
-                      <td className="whitespace-nowrap bg-white py-5 pl-4 pr-3 text-sm text-black group-first-of-type:rounded-md group-last-of-type:rounded-md sm:pl-6">
+                      <td className="whitespace-nowrap bg-white py-5 pr-3 pl-4 text-sm text-black group-first-of-type:rounded-md group-last-of-type:rounded-md sm:pl-6">
                         <div className="flex items-center gap-3">
                           <Image
                             src={customer.image_url}
