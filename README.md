@@ -120,7 +120,8 @@ className={
     )
 }
 ```
-- next/link로 <a>를 <Link>로 변경해서 Client-side navigation 사용
+
+- next/link로 `<a>`를 `<Link>`로 변경해서 Client-side navigation 사용
 - next/navigation의 {usePathname} 사용을 위해 'use client' 설정
 - clsx를 적용해 활성 링크를 조건부로 클래스(서식) 적용
 
@@ -169,10 +170,80 @@ export default function NavLinks() {
         </>
     );
 }
-
 ```
-[ Chapter 6 ]
+
+[ Chapter 6 : Database 설정 ]
+
 - Github에 프로젝트 업로드
 - Vercel을 통해 배포
+
 - Postgre DB 연결
-- 
+
+- `.env.example`을 `.env`로 변경
+- Vercel 사이트 env 정보를 로컬 .env에 입력
+
+```javascript
+// .env
+# Copy from .env.local on the Vercel dashboard
+# https://nextjs.org/learn/dashboard-app/setting-up-your-database#create-a-postgres-database
+
+        POSTGRES_URL="postgres://default:S2rkJNxvlA3n@ep-small-meadow-18713611-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb"
+POSTGRES_PRISMA_URL="postgres://default:S2rkJNxvlA3n@ep-small-meadow-18713611-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb?pgbouncer=true&connect_timeout=15"
+POSTGRES_URL_NON_POOLING="postgres://default:S2rkJNxvlA3n@ep-small-meadow-18713611.us-east-1.postgres.vercel-storage.com:5432/verceldb"
+POSTGRES_USER="default"
+POSTGRES_HOST="ep-small-meadow-18713611-pooler.us-east-1.postgres.vercel-storage.com"
+POSTGRES_PASSWORD="S2rkJNxvlA3n"
+POSTGRES_DATABASE="verceldb"
+
+# `openssl rand -base64 32`
+AUTH_SECRET=
+AUTH_URL=http://localhost:3000/api/auth
+```
+
+- `.gitignore`에 `.env` 포함
+- 터미널에서 `npm i @vercel/postgres` 입력
+- `package.json` 파일 내 `"seed": "node -r dotenv/config ./scripts/seed.js"` 추가
+
+```json
+// package.json
+{
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "prettier": "prettier --write --ignore-unknown .",
+    "prettier:check": "prettier --check --ignore-unknown .",
+    "start": "next start",
+    "seed": "node -r dotenv/config ./scripts/seed.js"
+  }
+  ```
+- `npm run seed` 실행 -> 에러 발생
+
+- DB에 수기 입력
+  - `seed.js`파일 내 sql 스크립트 + `placeholder-data.js` 내 json 데이터 조합
+  - console 스크립트 위치
+  - C:\Users\10482\AppData\Roaming\JetBrains\IntelliJIdea2023.2\consoles\db\1bcbb2a0-b0db-417a-907e-e6a7054ffffe
+
+```sql
+CREATE TABLE IF NOT EXISTS users
+(
+    id       UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    name     VARCHAR(255) NOT NULL,
+    email    TEXT         NOT NULL UNIQUE,
+    password TEXT         NOT NULL
+);
+```
+
+```sql
+INSERT INTO users (id, name, email, password)
+VALUES ('410544b2-4001-4271-9855-fec4b6a6442a',
+        'User',
+        'user@nextmail.com',
+        '123456')
+```
+
+[ Chapter 7 : 데이터 Fetching ]
+
+`/app/lib/data.ts`를 통해 `@vercel/postgres` 기능 설치
+`app/lib/definitions.ts`에 
+ 
