@@ -19,6 +19,9 @@ export default function Page() {
 
           {/*home.module.css*/}
           <div className={styles.shape}></div>
+          <a href={"/dashboard"}>Dashboard</a>
+          <a href={"/dashboard/invoices"}>Invoice</a>
+          <a href={"/dashboard/customers"}>Customer</a>
 
           <p className={`${lusitana.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}>
             <strong>Welcome to Acme.</strong> This is the example for the{' '}
