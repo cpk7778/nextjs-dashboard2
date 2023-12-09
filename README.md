@@ -1,6 +1,5 @@
-```html
-<a href="[http://example.com/](https://nextjs-dashboard-eight-gray-40.vercel.app/)" target="_blank"> Vercel Deployment</a>
-```
+## Vercel Deployment
+http://example.com/](https://nextjs-dashboard-eight-gray-40.vercel.app/
 
 ## 프로젝트 생성
 
