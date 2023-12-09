@@ -1,5 +1,5 @@
 ## Vercel Deployment
-<a href="https://nextjs-dashboard-eight-gray-40.vercel.app/" target="blank">https://nextjs-dashboard-eight-gray-40.vercel.app/</a>
+<a href="https://nextjs-dashboard-eight-gray-40.vercel.app/" target='blank'>https://nextjs-dashboard-eight-gray-40.vercel.app/</a>
 
 ## 프로젝트 생성
 
