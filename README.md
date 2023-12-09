@@ -201,7 +201,7 @@ Vercel
 dashboard
 #
 https://nextjs.org/learn/dashboard-app/setting-up-your-database#create-a-postgres-databasePOSTGRES_URL="postgres://default:S2rkJNxvlA3n@ep-small-meadow-18713611-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb"
-    POSTGRES_PRISMA_URL = "postgres://default:S2rkJNxvlA3n@ep-small-meadow-18713611-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb?pgbouncer=true&connect_timeout=15"
+POSTGRES_PRISMA_URL = "postgres://default:S2rkJNxvlA3n@ep-small-meadow-18713611-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb?pgbouncer=true&connect_timeout=15"
 POSTGRES_URL_NON_POOLING = "postgres://default:S2rkJNxvlA3n@ep-small-meadow-18713611.us-east-1.postgres.vercel-storage.com:5432/verceldb"
 POSTGRES_USER = "default"
 POSTGRES_HOST = "ep-small-meadow-18713611-pooler.us-east-1.postgres.vercel-storage.com"
